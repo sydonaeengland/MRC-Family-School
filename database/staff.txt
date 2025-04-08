@@ -1,0 +1,6 @@
+S7079,Susan,Barrett,1989/04/12,(876)123-3456,susanbarrett@gmail.com,123 West Mountain Drive,Teacher,Mathematics,Joseph Barrett,Spouse,(876)889-3451,123 West Mountain Drive
+S4091,Celeste,Hudson,1978/02/12,(876)345-7121,celestehudson@gmail.com,5 Navy Drive,Teacher,Chemistry;Biology,Jolie Hudson-Smith,Sister,(876)456-6657,16 SeaCrest Way
+S9012,Linda,Park,1982/12/05,(876)678-1123,linda.park@school.com,89 Birch Street,Teacher;Admin,Science;Biology,Henry Park,Husband,(876)555-6677,89 Birch Street
+S2043,Daniel,Reed,1978/09/30,(876)345-7890,daniel.reed@school.com,56 Cedar Lane,Admin,,Lucy Reed,Wife,(876)334-8877,56 Cedar Lane
+S6725,Rachel,Young,1987/10/22,(876)777-2323,rachel.young@school.com,75 Coral Way,Admin,,Eric Young,Brother,(876)444-1234,75 Coral Way
+S8193,Nichelle,Harrelson,1981/04/04,(876)546-0981,nichelleharrelson@gmail.com,3 South Mountain Pride Drive,Teacher,Mathematics;Physics,Hondo,Harrelson,(876)467-8823,3 South Mountain Pride Drive

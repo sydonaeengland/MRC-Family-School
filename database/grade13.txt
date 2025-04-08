@@ -1,0 +1,7 @@
+L2344,Aiden,Blake,2006/01/25,18,13,Jamaica College,(876) 432-8765,aidenblake@gmail.com,33 Hope Pasture Ave,Michael,Blake,Father,(876) 321-3344,mblake@gmail.com,N/A,N/A,N/A,N/A,N/A
+L9981,Grace,Simpson,2006/03/12,18,13,St. Andrew High for Girls,(876) 123-5544,gracesimpson@gmail.com,11 Lady Musgrave Rd,Nancy,Simpson,Mother,(876) 222-8899,nsimpson@gmail.com,N/A,N/A,N/A,N/A,N/A
+L7410,Elijah,Scott,2006/07/09,18,13,Kingston College,(876) 345-0000,elijahscott@gmail.com,65 Old Hope Rd,Donovan,Scott,Father,(876) 321-1112,dscott@hotmail.com,N/A,N/A,N/A,N/A,N/A
+L6342,Zara,Bailey,2006/09/01,18,13,Hillel Academy,(876) 432-3333,zarabailey@gmail.com,21 Manor Park Ave,Sandra,Bailey,Mother,(876) 876-7777,sbailey@gmail.com,Kevin,Bailey,Father,(876) 666-4444,kbailey@gmail.com
+L5123,Caleb,Brooks,2006/05/16,18,13,Campion College,(876) 678-4433,calebbrooks@gmail.com,41 Liguanea Dr,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+L4448,Aria,Reynolds,2006/08/27,18,13,Immaculate Conception High,(876) 876-5544,ariareynolds@gmail.com,3 Paddington Terrace,Lauren,Reynolds,Mother,(876) 234-6655,lreynolds@gmail.com,N/A,N/A,N/A,N/A,N/A
+L3902,Jayden,Powell,2006/11/30,18,13,Meadowbrook High,(876) 222-9988,jaydenpowell@gmail.com,27 Constant Spring Rd,Ricardo,Powell,Father,(876) 543-7788,rpowell@gmail.com,N/A,N/A,N/A,N/A,N/A

@@ -1,0 +1,7 @@
+L8124,Emily,Brown,2007/02/13,17,12,St. Andrew High for Girls,(876) 876-3421,emilybrown@gmail.com,15 Liguanea Road,Angela,Brown,Mother,(876) 213-4562,angelabrown@gmail.com,N/A,N/A,N/A,N/A,N/A
+L7203,Jackson,Hayes,2007/04/29,17,12,Jamaica College,(876) 234-1122,jhayes@gmail.com,55 Half Way Tree Rd,Robert,Hayes,Father,(876) 543-8899,rhayes@gmail.com,N/A,N/A,N/A,N/A,N/A
+L9335,Abigail,James,2007/06/10,17,12,Immaculate Conception High,(876) 789-3344,abigailjames@gmail.com,61 Old Hope Rd,Renee,James,Mother,(876) 321-5677,rjames@gmail.com,Colin,James,Father,(876) 765-2345,colinjames@hotmail.com
+L6743,Logan,Allen,2007/01/30,17,12,Kingston College,(876) 123-9087,loganallen@gmail.com,22 Mona Rd,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+L5822,Chloe,Wright,2007/12/01,17,12,Campion College,(876) 876-4456,chloewright@gmail.com,9 Red Hills Rd,Melissa,Wright,Mother,(876) 123-4567,melwright@gmail.com,N/A,N/A,N/A,N/A,N/A
+L4866,Daniel,Martin,2007/05/20,17,12,Hillel Academy,(876) 666-1287,danielmartin@gmail.com,71 Norbrook Dr,Carl,Martin,Father,(876) 321-4456,cmartin@gmail.com,N/A,N/A,N/A,N/A,N/A
+L9027,Lily,Hamilton,2007/11/18,17,12,Meadowbrook High,(876) 555-8899,lilyhamilton@gmail.com,14 Barbican Road,Karen,Hamilton,Mother,(876) 543-2233,khamilton@hotmail.com,N/A,N/A,N/A,N/A,N/A

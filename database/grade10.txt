@@ -1,0 +1,7 @@
+L9342,Ella,Reid,2009/04/12,15,10,Immaculate Conception High,(876) 234-5678,ellareid@gmail.com,12 Norbrook Ave,Lisa,Reid,Mother,(876) 345-6789,lisareid@gmail.com,N/A,N/A,N/A,N/A,N/A
+L8451,Mason,Grant,2009/06/25,15,10,Campion College,(876) 876-1234,masongrant@yahoo.com,44 Constant Spring Rd,Brian,Grant,Father,(876) 912-4567,bgrant@hotmail.com,Angela,Grant,Mother,(876) 341-9987,agrant@gmail.com
+L7284,Sophia,Stewart,2009/01/17,15,10,Hillel Academy,(876) 456-7890,sophiastewart@gmail.com,23 Cherry Gardens,Natalie,Stewart,Mother,(876) 223-4890,nstewart@gmail.com,N/A,N/A,N/A,N/A,N/A
+L6375,Ethan,Clarke,2009/07/09,15,10,Jamaica College,(876) 321-6547,ethanclarke@gmail.com,89 Half Way Tree Rd,Dwayne,Clarke,Father,(876) 654-7890,dclarke@yahoo.com,N/A,N/A,N/A,N/A,N/A
+L8219,Olivia,Dixon,2009/02/02,15,10,St. Andrew High for Girls,(876) 345-1234,oliviadixon@gmail.com,65 Hope Road,Karen,Dixon,Mother,(876) 555-1212,kdixon@gmail.com,N/A,N/A,N/A,N/A,N/A
+L9321,Liam,Bennett,2009/11/03,15,10,Kingston College,(876) 876-0987,liambennett@yahoo.com,13 Constant Spring Rd,Steve,Bennett,Father,(876) 987-6543,sbennett@hotmail.com,Nicole,Bennett,Mother,(876) 654-2211,nicolebennett@gmail.com
+L5532,Isabella,Burke,2009/03/28,15,10,Meadowbrook High,(876) 789-4561,isabellaburke@gmail.com,77 Barbican Rd,Marcia,Burke,Mother,(876) 321-4567,mburke@gmail.com,N/A,N/A,N/A,N/A,N/A

@@ -1,0 +1,7 @@
+L7432,James,Hall,2008/04/10,16,11,Jamaica College,(876) 345-9876,jameshall@gmail.com,19 Shortwood Ave,Richard,Hall,Father,(876) 654-1122,rhall@hotmail.com,N/A,N/A,N/A,N/A,N/A
+L2291,Ava,Lawrence,2008/05/14,16,11,St. Andrew High for Girls,(876) 555-3421,avalawrence@gmail.com,34 Ardenne Rd,Michelle,Lawrence,Mother,(876) 876-4567,mlawrence@gmail.com,David,Lawrence,Father,(876) 765-9911,davidlawrence@gmail.com
+L8667,Lucas,Young,2008/12/02,16,11,Meadowbrook High,(876) 765-2345,lucasyoung@yahoo.com,50 Constant Spring Rd,Greg,Young,Father,(876) 434-9870,gyoung@gmail.com,N/A,N/A,N/A,N/A,N/A
+L9923,Mila,Green,2008/06/11,16,11,Hillel Academy,(876) 432-1987,mlgreen@gmail.com,11 Cherry Hill,Nadine,Green,Mother,(876) 234-7654,ngreen@hotmail.com,N/A,N/A,N/A,N/A,N/A
+L3310,Henry,Morgan,2008/09/30,16,11,Campion College,(876) 543-1289,henrymorgan@gmail.com,33 Constant Spring Road,Paul,Morgan,Father,(876) 543-6789,pmorgan@gmail.com,N/A,N/A,N/A,N/A,N/A
+L7739,Zoe,Campbell,2008/03/19,16,11,Immaculate Conception High,(876) 678-9876,zoecampbell@gmail.com,45 Hope Blvd,Monique,Campbell,Mother,(876) 765-1122,mcampbell@gmail.com,Daniel,Campbell,Father,(876) 543-2211,dcampbell@gmail.com
+L6117,Benjamin,Robinson,2008/10/25,16,11,Kingston College,(876) 321-8765,benrobinson@gmail.com,22 Eastwood Park Rd,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
