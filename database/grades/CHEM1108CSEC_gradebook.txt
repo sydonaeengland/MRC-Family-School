@@ -1,5 +1,0 @@
-Student ID, Student Name, Average
-L7739, Zoe Campbell, 
-L9923, Mila Green, 
-L2291, Ava Lawrence, 
-L8667, Lucas Young, 

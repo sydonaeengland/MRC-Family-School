@@ -60,9 +60,9 @@ public class CourseManagementUI extends JPanel {
     }
 
     private void setupButtons() {
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 8, 6, 0));
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 9, 6, 0)); 
         buttonPanel.setBackground(new Color(0, 70, 140));
-
+    
         buttonPanel.add(createButton("Add New Course", e -> openCourseEntryForm()));
         buttonPanel.add(createButton("Update Course", e -> updateCourse()));
         buttonPanel.add(createButton("Delete Course", e -> deleteCourse()));
@@ -71,10 +71,30 @@ public class CourseManagementUI extends JPanel {
         buttonPanel.add(createButton("View Course Data", e -> viewCourseDetails()));
         buttonPanel.add(createButton("View Student Courses", e -> viewStudentCourses()));
         buttonPanel.add(createButton("View Teacher Courses", e -> viewTeacherCourses()));
+    
+        JButton backBtn = new JButton("<html><center>Back</center></html>");
+        backBtn.setFont(new Font("Arial", Font.BOLD, 11));
+        backBtn.setForeground(Color.WHITE);
+        backBtn.setBackground(new Color(30, 60, 90)); 
+        backBtn.setFocusPainted(false);
+        backBtn.setMargin(new Insets(4, 4, 4, 4));
+        backBtn.setPreferredSize(new Dimension(90, 48));
 
+        backBtn.addActionListener(e -> {
+            Window window = SwingUtilities.getWindowAncestor(this);
+            if (window != null) window.dispose();  
+
+            SwingUtilities.invokeLater(() -> {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.setVisible(true);
+            });
+        });
+
+        buttonPanel.add(backBtn);
         add(buttonPanel, BorderLayout.SOUTH);
     }
-
+    
+    
     private JButton createButton(String text, ActionListener actionListener) {
         JButton button = new JButton("<html><center>" + text + "</center></html>");
         button.setFont(new Font("Arial", Font.BOLD, 11));

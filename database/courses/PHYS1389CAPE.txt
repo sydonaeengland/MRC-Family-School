@@ -1,8 +1,0 @@
-Grade Level: 13
-Subject: Physics
-Exam Type: CAPE
-Teacher: Nichelle Harrelson
-Students:
-- L6342 - Zara Bailey
-- L4448 - Aria Reynolds
-- L9981 - Grace Simpson

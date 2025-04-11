@@ -43,28 +43,29 @@ public class StaffManagementUI extends JPanel {
     private void setupButtons() {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
         buttonPanel.setBackground(new Color(0, 70, 140));
-
+    
         JButton addButton = createButton("Add Staff");
         JButton updateButton = createButton("Update Staff");
         JButton deleteButton = createButton("Delete Staff");
         JButton searchByIDButton = createButton("Search by Staff ID");
         JButton searchByNameButton = createButton("Search by Name");
-
+    
+        // === ADD STAFF ===
         addButton.addActionListener(e -> {
-          StaffEntry staffEntry = new StaffEntry(staffController);
-          staffEntry.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-          
-          staffEntry.addWindowListener(new java.awt.event.WindowAdapter() {
-              @Override
-              public void windowClosed(java.awt.event.WindowEvent e) {
-                  refreshTable();
-              }
-          });
-      
-          staffEntry.setVisible(true);
-      });
-      
-
+            StaffEntry staffEntry = new StaffEntry(staffController);
+            staffEntry.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    
+            staffEntry.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosed(java.awt.event.WindowEvent e) {
+                    refreshTable();
+                }
+            });
+    
+            staffEntry.setVisible(true);
+        });
+    
+        // === UPDATE STAFF ===
         updateButton.addActionListener(e -> {
             String staffID = JOptionPane.showInputDialog(this, "Enter Staff ID to Update:");
             if (staffID != null && !staffID.trim().isEmpty()) {
@@ -78,7 +79,8 @@ public class StaffManagementUI extends JPanel {
                 }
             }
         });
-
+    
+        // === DELETE STAFF ===
         deleteButton.addActionListener(e -> {
             String staffID = JOptionPane.showInputDialog(this, "Enter Staff ID to Delete:");
             if (staffID != null && !staffID.trim().isEmpty()) {
@@ -90,7 +92,8 @@ public class StaffManagementUI extends JPanel {
                 }
             }
         });
-
+    
+        // === SEARCH BY ID ===
         searchByIDButton.addActionListener(e -> {
             String staffID = JOptionPane.showInputDialog(this, "Enter Staff ID to Search:");
             if (staffID != null && !staffID.trim().isEmpty()) {
@@ -102,7 +105,8 @@ public class StaffManagementUI extends JPanel {
                 }
             }
         });
-
+    
+        // === SEARCH BY NAME ===
         searchByNameButton.addActionListener(e -> {
             String name = JOptionPane.showInputDialog(this, "Enter Staff First Name or Last Name to Search:");
             if (name != null && !name.trim().isEmpty()) {
@@ -114,14 +118,35 @@ public class StaffManagementUI extends JPanel {
                 }
             }
         });
-
+    
+        // === BACK BUTTON ===
+        JButton backBtn = new JButton("<html><center>Back</center></html>");
+        backBtn.setFont(new Font("Arial", Font.BOLD, 11));
+        backBtn.setForeground(Color.WHITE);
+        backBtn.setBackground(new Color(60, 105, 135));  // dark appealing blue
+        backBtn.setFocusPainted(false);
+        backBtn.setMargin(new Insets(4, 4, 4, 4));
+        backBtn.setPreferredSize(new Dimension(90, 48));
+        backBtn.addActionListener(e -> {
+            Window window = SwingUtilities.getWindowAncestor(this);
+            if (window != null) window.dispose();
+    
+            SwingUtilities.invokeLater(() -> {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.setVisible(true);
+            });
+        });
+    
         buttonPanel.add(addButton);
         buttonPanel.add(updateButton);
         buttonPanel.add(deleteButton);
         buttonPanel.add(searchByIDButton);
         buttonPanel.add(searchByNameButton);
+        buttonPanel.add(backBtn);
+    
         add(buttonPanel, BorderLayout.SOUTH);
     }
+    
 
     private void setupTable() {
         String[] columnNames = { "Staff ID", "Name", "Phone", "Email", "Roles", "Subjects" };

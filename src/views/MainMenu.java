@@ -1,5 +1,6 @@
 package views;
 
+import controllers.CourseController;
 import controllers.StaffController;
 import controllers.StudentController;
 
@@ -96,6 +97,7 @@ public class MainMenu extends JFrame {
     }
 
     private void openAttendanceManagement() {
+        openManagementWindow("Attendance Management", new AttendanceManagementUI(this, new CourseController()));
     }
 
     private void openGradeManagement() {
@@ -114,9 +116,13 @@ public class MainMenu extends JFrame {
         JFrame frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(900, 600);
+        frame.setLocationRelativeTo(null);
         frame.add(panel);
         frame.setVisible(true);
+    
+        this.setVisible(false);
     }
+    
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

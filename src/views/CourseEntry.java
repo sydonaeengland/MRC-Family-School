@@ -194,7 +194,6 @@ public class CourseEntry extends JDialog {
     
         try {
             if (existingCourse == null) {
-                // Creating a new course
                 String generatedID = CourseController.generateCourseID(newSubject, newGrade, newExamType);
                 courseIDField.setText(generatedID);
                 courseController.createCourse(generatedID, newGrade, newSubject, newExamType, teacherName);
@@ -204,7 +203,6 @@ public class CourseEntry extends JDialog {
                 String newID = CourseController.generateCourseID(newSubject, newGrade, newExamType);
                 boolean idChanged = !oldID.equals(newID);
                 boolean gradeChanged = !existingCourse.getGradeLevel().equals(newGrade);
-                boolean subjectChanged = !existingCourse.getSubject().equals(newSubject);
     
                 if (idChanged) {
                     courseController.renameCourseFiles(oldID, newID);

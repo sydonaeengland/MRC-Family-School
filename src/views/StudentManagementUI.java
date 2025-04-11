@@ -59,23 +59,30 @@ public class StudentManagementUI extends JPanel {
     private void setupButtons() {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
         buttonPanel.setBackground(new Color(0, 70, 140));
-
+    
         JButton addButton = createButton("Add Student");
         JButton updateButton = createButton("Update Student");
         JButton deleteButton = createButton("Delete Student");
         JButton searchByIDButton = createButton("Search by Student ID");
         JButton searchByNameButton = createButton("Search by Name");
-
+        JButton backButton = new JButton("Back");
+    
+        backButton.setFont(new Font("Arial", Font.BOLD, 12));
+        backButton.setForeground(Color.WHITE);
+        backButton.setBackground(new Color(30, 60, 90)); 
+        backButton.setFocusPainted(false);
+        backButton.setPreferredSize(new Dimension(120, 40));
+    
         buttonPanel.add(addButton);
         buttonPanel.add(updateButton);
         buttonPanel.add(deleteButton);
         buttonPanel.add(searchByIDButton);
         buttonPanel.add(searchByNameButton);
-
+        buttonPanel.add(backButton);
+    
         addButton.addActionListener(e -> {
             StudentEntry studentEntry = new StudentEntry(null, studentController);
             studentEntry.setVisible(true);
-        
             studentEntry.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosed(WindowEvent e) {
@@ -83,24 +90,33 @@ public class StudentManagementUI extends JPanel {
                 }
             });
         });
-        
-
+    
         updateButton.addActionListener(e -> {
             updateStudent();
-            refreshTable(); 
+            refreshTable();
         });
-
+    
         deleteButton.addActionListener(e -> {
             deleteStudent();
-            refreshTable(); 
+            refreshTable();
         });
-
+    
         searchByIDButton.addActionListener(e -> searchStudentByID());
         searchByNameButton.addActionListener(e -> searchStudentByName());
-
+    
+        backButton.addActionListener(e -> {
+            Window window = SwingUtilities.getWindowAncestor(this);
+            if (window != null) window.dispose();
+    
+            SwingUtilities.invokeLater(() -> {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.setVisible(true);
+            });
+        });
+    
         add(buttonPanel, BorderLayout.SOUTH);
     }
-
+    
     private JButton createButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("Arial", Font.BOLD, 14));

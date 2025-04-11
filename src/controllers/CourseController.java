@@ -396,8 +396,6 @@ public class CourseController {
      * ASSIGNSTUDENTSTOCOURSE
      * - Adds students to course, attendance, and gradebook files.
      */
-
-
     public void assignStudentsToCourse(String courseID, List<String> studentIDsWithNames) throws IOException {
         File courseFile = new File("database/courses/" + courseID + ".txt");
         File attendanceFile = new File("database/attendance/" + courseID + "_attendance.txt");
@@ -409,47 +407,117 @@ public class CourseController {
     
         List<String> courseLines = Files.readAllLines(courseFile.toPath());
         List<String> updatedCourseLines = new ArrayList<>();
-        boolean studentSectionFound = false;
+        List<String> studentLines = new ArrayList<>();
+        boolean inStudentSection = false;
     
         for (String line : courseLines) {
-            updatedCourseLines.add(line);
             if (line.trim().equalsIgnoreCase("Students:")) {
-                studentSectionFound = true;
+                inStudentSection = true;
+                updatedCourseLines.add(line);
+            } else if (inStudentSection && line.startsWith("- ")) {
+                studentLines.add(line);
+            } else {
+                if (!inStudentSection) updatedCourseLines.add(line);
             }
         }
     
         for (String student : studentIDsWithNames) {
-            if (studentSectionFound && updatedCourseLines.stream().noneMatch(line -> line.trim().equals("- " + student))) {
-                updatedCourseLines.add("- " + student);
+            String entry = "- " + student;
+            if (!studentLines.contains(entry)) {
+                studentLines.add(entry);
             }
         }
     
+        studentLines.sort(Comparator.comparing(s -> {
+            String[] parts = s.split(" - ");
+            return parts.length > 1 ? parts[1].split(" ")[1] : "";
+        }));
+    
+        updatedCourseLines.addAll(studentLines);
         Files.write(courseFile.toPath(), updatedCourseLines);
     
-        try (BufferedWriter attendanceWriter = new BufferedWriter(new FileWriter(attendanceFile, true))) {
+        AttendanceController ac = new AttendanceController();
+        List<String[]> attendanceData = ac.getAttendanceDataForCourse(courseID);
+        List<String[]> updatedAttendanceRows = new ArrayList<>();
+        Set<String> existingIDs = new HashSet<>();
+    
+        if (!attendanceData.isEmpty()) {
+            String[] headerRow = attendanceData.get(0);
+            updatedAttendanceRows.add(headerRow);
+    
+            for (int i = 1; i < attendanceData.size(); i++) {
+                String[] row = attendanceData.get(i);
+                updatedAttendanceRows.add(row);
+                existingIDs.add(row[0].trim());
+            }
+    
             for (String student : studentIDsWithNames) {
                 String[] parts = student.split(" - ");
                 if (parts.length >= 2) {
                     String id = parts[0].trim();
                     String name = parts[1].trim();
-                    attendanceWriter.write(id + ", " + name);
-                    attendanceWriter.newLine();
+                    if (!existingIDs.contains(id)) {
+                        String[] newRow = new String[headerRow.length];
+                        newRow[0] = id;
+                        newRow[1] = name;
+                        for (int i = 2; i < headerRow.length; i++) {
+                            newRow[i] = "";
+                        }
+                        updatedAttendanceRows.add(newRow);
+                    }
+                }
+            }
+    
+            updatedAttendanceRows.subList(1, updatedAttendanceRows.size()).sort(Comparator.comparing(
+                row -> row[1].split(" ")[1]
+            ));
+    
+            ac.saveAttendanceData(courseID, updatedAttendanceRows);
+        }
+    
+        List<String[]> gradebookRows = new ArrayList<>();
+    
+        if (gradebookFile.exists()) {
+            List<String> lines = Files.readAllLines(gradebookFile.toPath());
+            for (String line : lines) {
+                String[] row = line.split(",", -1);
+                if (row[0].toLowerCase().contains("student id")) continue; 
+                gradebookRows.add(row);
+            }
+        }
+    
+        Set<String> existingGradeIDs = new HashSet<>();
+        for (String[] row : gradebookRows) {
+            if (row.length > 0) existingGradeIDs.add(row[0].trim());
+        }
+    
+        for (String student : studentIDsWithNames) {
+            String[] parts = student.split(" - ");
+            if (parts.length >= 2) {
+                String id = parts[0].trim();
+                String name = parts[1].trim();
+                if (!existingGradeIDs.contains(id)) {
+                    gradebookRows.add(new String[]{id, name, ""});
                 }
             }
         }
     
-        try (BufferedWriter gradebookWriter = new BufferedWriter(new FileWriter(gradebookFile, true))) {
-            for (String student : studentIDsWithNames) {
-                String[] parts = student.split(" - ");
-                if (parts.length >= 2) {
-                    String id = parts[0].trim();
-                    String name = parts[1].trim();
-                    gradebookWriter.write(id + ", " + name + ", ");
-                    gradebookWriter.newLine();
-                }
+        gradebookRows.sort(Comparator.comparing(row -> {
+            String[] nameParts = row[1].trim().split(" ");
+            return nameParts.length > 1 ? nameParts[1] : nameParts[0];
+        }));
+    
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(gradebookFile))) {
+            writer.write("Student ID, Student Name, Average");
+            writer.newLine();
+            for (String[] row : gradebookRows) {
+                writer.write(String.join(", ", row));
+                writer.newLine();
             }
         }
     }
+    
+    
 
     /**
      * REMOVESTUDENTSFROMCOURSE

@@ -1,8 +1,0 @@
-Student ID, Student Name
-L9321, Liam Bennett
-L5532, Isabella Burke
-L6375, Ethan Clarke
-L8219, Olivia Dixon
-L8451, Mason Grant
-L9342, Ella Reid
-L7284, Sophia Stewart
