@@ -101,7 +101,9 @@ public class MainMenu extends JFrame {
     }
 
     private void openGradeManagement() {
+        openManagementWindow("Gradebook Management", new GradebookManagementUI(this, new CourseController()));
     }
+    
 
     private void openStaffManagement() {
         StaffController staffController = new StaffController();
