@@ -409,9 +409,36 @@ public class GradebookController {
             e.printStackTrace();
         }
     }
+
+    public Map<String, Double> getStudentAveragesForCourse(String courseID) {
+        Map<String, Double> averages = new HashMap<>();
+        File file = new File("database/grades/" + courseID + "_gradebook.txt");
     
+        if (!file.exists()) return averages;
+    
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String header = reader.readLine();
+    
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",", -1);
+                if (parts.length > 2) {
+                    String studentID = parts[0].trim();
+                    String averageStr = parts[2].trim(); 
+                    try {
+                        double avg = Double.parseDouble(averageStr);
+                        averages.put(studentID, avg);
+                    } catch (NumberFormatException ignored) {
 
-
-
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
+        return averages;
+    }
+    
   
 }

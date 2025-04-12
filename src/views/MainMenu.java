@@ -104,7 +104,6 @@ public class MainMenu extends JFrame {
         openManagementWindow("Gradebook Management", new GradebookManagementUI(this, new CourseController()));
     }
     
-
     private void openStaffManagement() {
         StaffController staffController = new StaffController();
         openManagementWindow("Staff Management", new StaffManagementUI(staffController));
@@ -112,8 +111,9 @@ public class MainMenu extends JFrame {
 
 
     private void openReportManagement() {
+        openManagementWindow("Report Management", new ReportManagementUI(this));
     }
-
+    
     private void openManagementWindow(String title, JPanel panel) {
         JFrame frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
