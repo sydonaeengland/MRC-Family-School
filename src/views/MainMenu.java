@@ -56,6 +56,7 @@ public class MainMenu extends JFrame {
         gridPanel.add(reportBtn);
 
         add(gridPanel, BorderLayout.CENTER);
+        setVisible(true); 
     }
 
     private JButton createStyledButton(String text, String iconPath, ActionListener action) {
